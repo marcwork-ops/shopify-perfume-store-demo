@@ -1,0 +1,42 @@
+{% comment %}
+  Shows how far the cart is from the free shipping threshold.
+  Rendered inside the cart drawer and cart page areas that Dawn re-renders on every cart change,
+  so it updates without extra JavaScript.
+
+  Accepts:
+  - class {String}: extra class for the wrapper (optional)
+
+  Usage:
+  {% render 'free-shipping-bar' %}
+{% endcomment %}
+{%- if settings.free_shipping_enabled and settings.free_shipping_threshold > 0 and cart.item_count > 0 -%}
+  {%- liquid
+    assign threshold = settings.free_shipping_threshold | times: 100
+    assign remaining = threshold | minus: cart.total_price
+    assign progress = cart.total_price | times: 100 | divided_by: threshold
+    if progress > 100
+      assign progress = 100
+    endif
+    assign remaining_money = remaining | money
+    assign amount_html = '<strong>' | append: remaining_money | append: '</strong>'
+  -%}
+  <div class="free-shipping-bar{% if class %} {{ class }}{% endif %}{% if remaining <= 0 %} free-shipping-bar--reached{% endif %}">
+    <p class="free-shipping-bar__message">
+      {%- if remaining > 0 -%}
+        {{ settings.free_shipping_message | escape | replace: '[amount]', amount_html }}
+      {%- else -%}
+        {{ settings.free_shipping_success | escape }}
+      {%- endif -%}
+    </p>
+    <div
+      class="free-shipping-bar__track"
+      role="progressbar"
+      aria-label="{{ settings.free_shipping_message | remove: '[amount]' | escape }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="{{ progress }}"
+    >
+      <span class="free-shipping-bar__fill" style="width: {{ progress }}%;"></span>
+    </div>
+  </div>
+{%- endif -%}

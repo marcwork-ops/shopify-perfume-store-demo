@@ -1,0 +1,42 @@
+{% comment %}
+  Bottom bar that appears after the main add to cart button scrolls out of view.
+  Clicking it clicks the real submit button, so validation, quantity and the cart drawer behave as usual.
+
+  Accepts:
+  - product: {Object} Product object
+  - section_id: {String} id of the main product section
+
+  Usage:
+  {% render 'sticky-add-to-cart', product: product, section_id: section.id %}
+{% endcomment %}
+{{ 'component-sticky-add-to-cart.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'sticky-add-to-cart.js' | asset_url }}" defer="defer"></script>
+
+{%- assign variant = product.selected_or_first_available_variant -%}
+<sticky-add-to-cart
+  class="sticky-atc color-{{ settings.cart_color_scheme | default: 'scheme-1' }} gradient"
+  data-section="{{ section_id }}"
+  aria-hidden="true"
+>
+  <div class="sticky-atc__inner page-width">
+    {%- if product.featured_media -%}
+      {{
+        product.featured_media
+        | image_url: width: 120
+        | image_tag: class: 'sticky-atc__image', loading: 'lazy', widths: '60, 120', sizes: '60px', alt: ''
+      }}
+    {%- endif -%}
+    <div class="sticky-atc__info">
+      <p class="sticky-atc__title">{{ product.title | escape }}</p>
+      <p class="sticky-atc__variant{% if product.has_only_default_variant %} hidden{% endif %}">
+        {{- variant.title | escape -}}
+      </p>
+    </div>
+    <div class="sticky-atc__price">
+      {%- render 'price', product: product, use_variant: true -%}
+    </div>
+    <button type="button" class="sticky-atc__button button button--primary" tabindex="-1">
+      {{ 'products.product.add_to_cart' | t }}
+    </button>
+  </div>
+</sticky-add-to-cart>

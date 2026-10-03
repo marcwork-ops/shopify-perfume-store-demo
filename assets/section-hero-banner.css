@@ -1,0 +1,122 @@
+.hero-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-banner__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.hero-banner__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-focal-mobile, 75% 50%);
+}
+
+.hero-banner__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--hero-overlay, 0.2));
+  pointer-events: none;
+}
+
+.hero-banner__content {
+  position: relative;
+  z-index: 1;
+  padding-top: 3.2rem;
+  padding-bottom: 4rem;
+}
+
+.hero-banner__box > * + * {
+  margin-top: 1.6rem;
+}
+
+.hero-banner__eyebrow {
+  margin-bottom: 0;
+  opacity: 0.85;
+}
+
+.hero-banner__heading {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-banner__text {
+  max-width: 44rem;
+  font-size: 1.7rem;
+  opacity: 0.9;
+}
+
+.hero-banner__text p {
+  margin: 0;
+}
+
+.hero-banner__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding-top: 0.8rem;
+}
+
+@media screen and (max-width: 749px) {
+  .hero-banner__buttons .button {
+    flex: 1 1 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .hero-banner__media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
+
+  .hero-banner__image {
+    object-position: center;
+  }
+
+  /* Darken the text side only, so the products stay vivid. */
+  .hero-banner__media::after {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, calc(var(--hero-overlay, 0.2) + 0.25)) 0%,
+      rgba(0, 0, 0, var(--hero-overlay, 0.2)) 40%,
+      rgba(0, 0, 0, 0) 65%
+    );
+  }
+
+  .hero-banner--right .hero-banner__media::after {
+    transform: scaleX(-1);
+  }
+
+  .hero-banner {
+    min-height: min(46.875vw, 80rem);
+    justify-content: center;
+    background: transparent;
+  }
+
+  .hero-banner__content {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    width: 100%;
+  }
+
+  .hero-banner__box {
+    max-width: 48rem;
+  }
+
+  .hero-banner--right .hero-banner__box {
+    margin-left: auto;
+  }
+
+  .hero-banner__text {
+    font-size: 1.9rem;
+  }
+}

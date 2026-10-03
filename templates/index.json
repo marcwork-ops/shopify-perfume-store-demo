@@ -1,0 +1,214 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "blocks": {
+        "eyebrow": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "The autumn collection"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Scents that stay with you",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Small-batch fragrances with warm amber, rose and vetiver notes, made to last from morning to night.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop best sellers",
+            "button_link_1": "shopify://collections/all",
+            "button_label_2": "Find your scent",
+            "button_link_2": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": ["eyebrow", "heading", "text", "buttons"],
+      "settings": {
+        "text_position": "left",
+        "overlay_opacity": 15,
+        "mobile_focal_point": 75,
+        "color_scheme": "scheme-3"
+      }
+    },
+    "trust_badges": {
+      "type": "trust-badges",
+      "blocks": {
+        "shipping": {
+          "type": "badge",
+          "settings": { "icon": "truck", "title": "Free shipping", "text": "On orders over $50" }
+        },
+        "returns": {
+          "type": "badge",
+          "settings": { "icon": "return", "title": "30-day returns", "text": "Not in love? Send it back" }
+        },
+        "secure": {
+          "type": "badge",
+          "settings": { "icon": "lock", "title": "Secure checkout", "text": "Encrypted payments" }
+        },
+        "support": {
+          "type": "badge",
+          "settings": { "icon": "chat_bubble", "title": "Real support", "text": "Replies within 24 hours" }
+        }
+      },
+      "block_order": ["shipping", "returns", "secure", "support"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "best_sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best sellers",
+        "heading_size": "h1",
+        "description": "<p>The scents our customers come back for.</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 56,
+        "padding_bottom": 44
+      }
+    },
+    "brand_story": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Our story",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Made slowly, in small batches",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every bottle is blended, aged and filled by hand. We use fewer ingredients, better ones, and we never rush a scent to market.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read our story",
+            "button_link": "",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": ["caption", "heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "reviews": {
+      "type": "multicolumn",
+      "blocks": {
+        "review_1": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★",
+            "text": "<p>“Sample review: replace with a real customer quote, or swap this section for a reviews app widget.”</p><p><strong>Customer name</strong></p>"
+          }
+        },
+        "review_2": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★",
+            "text": "<p>“Sample review: short, specific quotes convert best, e.g. how long the scent lasts.”</p><p><strong>Customer name</strong></p>"
+          }
+        },
+        "review_3": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★",
+            "text": "<p>“Sample review: mention the product by name so shoppers can find it.”</p><p><strong>Customer name</strong></p>"
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3"],
+      "settings": {
+        "title": "What our customers say",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get 10% off your first order",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Join the list for new scents, restocks and members-only offers.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": ["heading", "paragraph", "email_form"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": ["hero", "trust_badges", "best_sellers", "brand_story", "reviews", "newsletter"]
+}

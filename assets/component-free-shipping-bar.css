@@ -1,0 +1,35 @@
+.free-shipping-bar {
+  padding: 1.2rem 0 1.6rem;
+}
+
+.free-shipping-bar__message {
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.free-shipping-bar__track {
+  position: relative;
+  height: 0.6rem;
+  border-radius: 1rem;
+  background: rgba(var(--color-foreground), 0.12);
+  overflow: hidden;
+}
+
+.free-shipping-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: rgb(var(--color-button));
+  transition: width var(--duration-long) ease;
+}
+
+.free-shipping-bar--reached .free-shipping-bar__message {
+  font-weight: 600;
+}
+
+.cart-drawer .free-shipping-bar {
+  padding: 0 0 1.6rem;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  margin-bottom: 0.8rem;
+}
